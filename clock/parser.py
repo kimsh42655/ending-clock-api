@@ -8,7 +8,7 @@ django.setup()
 from clock.models import Notice
 
 def parse_notice():
-    url = 'https://www.korea.ac.kr/cop/portalBoard/portalBoardList.do?siteId=university&type=NG&id=university_060201000000'
+    url = 'https://www.korea.ac.kr/cop/portalBoard/portalBoardList.do?siteId=university&type=NG'
     req = requests.get(url)
     if req.status_code == 200:
         html = req.text
