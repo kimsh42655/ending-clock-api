@@ -1,6 +1,6 @@
 from .base import *
 
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['3.38.3.105']
+ALLOWED_HOSTS = ['3.38.3.105', 'endingclock.tk/', 'www.endingclock.tk/']
 STATIC_ROOT = BASE_DIR / 'static/'
