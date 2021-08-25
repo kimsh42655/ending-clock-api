@@ -18,7 +18,11 @@ def parse_notice():
         for notice in notices:
             title = notice.select_one('a').text
             date = notice.select_one('ul > li:last-child > strong').text[6:]
-            data[title] = date
+            href = notice.find('a')['href']
+            articled = href[20:-3]
+            link = 'http://www.korea.ac.kr/cop/portalBoard/portalBoardView.do?siteId=university&type=NG&id=university_060201000000&articleId='+articled
+
+            data[title] = (date,link)
         
         return data
     else :

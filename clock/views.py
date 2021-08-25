@@ -12,7 +12,7 @@ class NoticeListAPI(APIView):
         Notice.objects.all().delete()
         notice_data_dict = parse_notice()
         for t, d in notice_data_dict.items():
-            Notice(title = t, date = d).save()
+            Notice(title = t, date = d[0], link = d[1]).save()
         queryset = Notice.objects.all()
         print(queryset)
         serializer = NoticeSerializer(queryset, many=True)
